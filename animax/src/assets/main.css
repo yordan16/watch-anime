@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:wgth@300;400');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container .head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+    z-index: 1000000;
+
+}
+
+.container .head img{
+    width: 15%;
+}
+
+.container .head a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #e50914;
+    padding: 8px 18px;
+    border-radius: 5px;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to bottom, #000, transparent) ;
+}
+
+.banner:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to top, #000, transparent) ;
+}
+
+.banner .fit {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 0.6;
+    background-blend-mode: luminosity;
+}
+
+.banner .box {
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.banner .box .heading{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   padding-bottom: 100px;
+   padding-right: 50px;
+}
+
+.banner .box .heading h2{
+    font-size: 3.125rem;
+    color: white;
+    letter-spacing: 2px;
+    width: 80%;
+}
+
+.banner .box .heading h5{
+    font-size: 1.625rem;
+    color: white;
+    font-weight: 400;
+}
+
+.banner .box .heading p{
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+    padding: 15px 0;
+    padding-bottom: ;
+}
+
+.banner .box a{
+  color: #fff;
+  text-decoration: none;
+  background-color: #e50914;
+  padding: 0.01px 2px;
+  border-radius: 5px;
+}
+
+
+.login_body {
+  padding: 6px;
+  z-index: 90;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.login_body h2{
+  font-size: 25px;
+  color: white;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.login_body input{
+  height: 40px;
+  width: 70%;
+  border-radius: 10px;
+  color: #fff;
+  background: #333;
+  border: 1px solid #333;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+
+.input_wrap{
+  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-left: 90px;
+}
+
+.login_body button{
+  color: #fff;
+  text-decoration: none;
+  background-color: #e50914;
+  padding: 8px 18px;
+  border-radius: 5px;
+  margin-left: 70px;
+}
+
+.sign_up {
+  color: #737373;
+  font-size: 15px;
+  margin-left: 70px;
+}
+
+.sign_up a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
