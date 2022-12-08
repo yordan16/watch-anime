@@ -15,11 +15,24 @@ export default {
 
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <img src="../assets/img/animax-logo.png" alt="" style="width: 80px" />
+    <RouterLink to="/anime">
+      <img src="../assets/img/animax-logo.png" alt="" style="width: 80px" />
+    </RouterLink>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" style="color: white" href="#">Cart</a>
+          <RouterLink to="/cart" class="nav-link" style="color: white" href="#"
+            >Cart</RouterLink
+          >
+        </li>
+        <li class="nav-item active">
+          <RouterLink
+            to="/profile"
+            class="nav-link"
+            style="color: white"
+            href="#"
+            >My Profile</RouterLink
+          >
         </li>
         <li class="nav-item active">
           <a

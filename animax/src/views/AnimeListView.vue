@@ -20,5 +20,10 @@ export default {
 </script>
 <template>
   <Navbar />
-  <Card />
+  <div class="list" style="height: auto">
+    <link rel="stylesheet" />
+    <div class="cards">
+      <Card />
+    </div>
+  </div>
 </template>

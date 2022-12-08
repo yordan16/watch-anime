@@ -8,7 +8,7 @@ export default {
     return {
       dataLogin: {
         email: "",
-        passwor: "",
+        password: "",
       },
     };
   },
@@ -16,7 +16,10 @@ export default {
     ...mapState(useCounterStore, ["isLogin"]),
   },
   methods: {
-    ...mapActions(useCounterStore, ["login"]),
+    ...mapActions(useCounterStore, ["login", "loginGoogle"]),
+    callback(resp) {
+      this.loginGoogle(resp.credential);
+    },
   },
 };
 </script>
@@ -51,8 +54,12 @@ export default {
           <div class="input_wrap">
             <button type="submit">Sign in</button>
           </div>
+          <GoogleLogin v-bind:callback="callback" />
           <div class="sign_up">
-            <p>Already have an account? <a href="">Sign in now.</a></p>
+            <p>
+              Dont have an account?
+              <RouterLink to="/register" href="">Create here.</RouterLink>
+            </p>
           </div>
         </form>
       </div>

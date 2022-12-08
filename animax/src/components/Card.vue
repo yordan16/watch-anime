@@ -6,36 +6,32 @@ export default {
   name: "Card",
   methods: {
     ...mapActions(useCounterStore, ["getData"]),
+    formatIDR(value) {
+      return value.toLocaleString("id-ID");
+    },
   },
   computed: {
     ...mapState(useCounterStore, ["products"]),
   },
-  props: ["product"],
 };
 </script>
 
 <template>
-  <div class="list" style="background-color: black; height: 500vh">
-    <div
-      v-for="product in products"
-      :key="product.title"
-      v-bind:product="product"
-    >
-      <img :src="product.poster" rel="stylesheet" />
-      <div class="cards">
-        <div class="card mt-5">
-          <h2 class="card-title">{{ product.title }}</h2>
-          <img
-            src="https://images.unsplash.com/photo-1591485423007-765bde4139ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
-            alt=""
-          />
-          <div class="card-desc">
-            <p>Price:</p>
-            <p>Rating:</p>
-            <button type="button" class="btn btn-danger">Add to Cart</button>
-          </div>
-        </div>
-      </div>
+  <div class="card mt-5 ml-2" v-for="product in products" :key="product.title">
+    <h6 class="card-title">{{ product.title }}</h6>
+    <img
+      :src="'https://simkl.in/posters/' + product.poster + '_w.webp'"
+      alt=""
+      style="height: 250px"
+    />
+    <div class="card-desc">
+      <p>ID: {{ product.ids.simkl_id }}</p>
+      <p>Year: {{ product.year }}</p>
+      <p>Price: Rp. {{ formatIDR(product.ratings.mal.votes) }},-</p>
+      <p>Rating: {{ product.ratings.simkl.rating }}</p>
+      <RouterLink to="/list" type="button" class="btn btn-danger"
+        >Want to buy?</RouterLink
+      >
     </div>
   </div>
 </template>
@@ -53,7 +49,7 @@ export default {
   position: absolute;
   max-width: 250px;
   max-height: 350px;
-  box-shadow: 0 30px 60px -6px white;
+  box-shadow: 0 10px 30px -6px black;
 }
 
 .card-title {

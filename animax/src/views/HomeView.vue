@@ -8,7 +8,7 @@ export default {
   <section class="container">
     <div class="head">
       <img src="../assets/img/animax-logo.png" alt="" />
-      <a href="">Sign Up</a>
+      <RouterLink to="/login" href="">Sign Up</RouterLink>
     </div>
   </section>
   <section class="banner">
@@ -19,7 +19,7 @@ export default {
         <h5>Watch anywhere, read anywhere.</h5>
         <p>
           Ready to start? Click the Sign Up button to create your membership or
-          click <a href="">here</a> to sign in.
+          click <RouterLink to="/register" href="">here</RouterLink> to sign in.
         </p>
       </div>
     </div>

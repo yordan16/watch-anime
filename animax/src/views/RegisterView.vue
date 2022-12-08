@@ -13,7 +13,10 @@ export default {
     };
   },
   methods: {
-    ...mapActions(useCounterStore, ["register"]),
+    ...mapActions(useCounterStore, ["register", "loginGoogle"]),
+    callback(resp) {
+      this.loginGoogle(resp.credential);
+    },
   },
 };
 </script>
@@ -48,8 +51,12 @@ export default {
           <div class="input_wrap">
             <button type="submit">Sign in</button>
           </div>
+          <GoogleLogin v-bind:callback="callback" />
           <div class="sign_up">
-            <p>Already have an account? <a href="">Sign in now.</a></p>
+            <p>
+              Already have an account?
+              <RouterLink to="/login" href="">Sign in now.</RouterLink>
+            </p>
           </div>
         </form>
       </div>
